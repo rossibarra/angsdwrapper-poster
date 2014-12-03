@@ -88,30 +88,12 @@ These features make it easy and intuitive to analyze next generation sequencing 
 \end{figure}
 \vskip0ex
 
-
-%        \centering
-%        \begin{subfigure}
-%				\includegraphics[width=0.75\columnwidth]{conf.png}                
-%				%                \label{configfile}
-%        \end{subfigure}%
-%        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-%          %(or a blank line to force the subfigure onto a new line)
-%        \begin{subfigure}{0.3\textwidth}
-%				\includegraphics[width=0.99\columnwidth]{screenshot.png}
-%                \caption{Interactive plotting with Shiny}
-%                \label{shinygraph}
-%        \end{subfigure}
-%        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-%          %(or a blank line to force the subfigure onto a new line)
-%         
-%		
-
 \section{Example Application}
 
 We sequenced 8 genomes of the wild rice \emph{Oryza glumaepatula}, 4 each from populations allopatric and sympatric to cultivated fields of the domesticated \emph{Oryza sativa} ssp. \emph{indica}, in order to investigate evidence of crop-wild introgression. 
 \emph{O. glumaepatula} is a potentially endangered species 1.8 MY diverged from domesticated rice \cite{Zhang} and native to Central and South America \cite{Vaughan}. 
 Both species share the AA genome \cite{Vaughan} and we have successfully crossed them experimentally, providing reason to believe the possibility of natural hybridization and thus the risk of wild population decline and extinction \cite{Rhymer}. 
-Preliminary analysis using ANGSD-wrapper is suggestive of introgression (Figure \ref{gluma}) as evidenced by the higher correlation of nucleotide diversity ($\pi$) between domesticated rice and the sympatric population (Spearman's $\rho=0.537$) than between domesticated rice and allopatric O. glumaepatula (0.139).
+Preliminary analysis using ANGSD-wrapper is suggestive of introgression (Figure \ref{gluma}): nucleotide diversity in the sympatric population of \emph{Oryza glumaepatula} is more strongly correlated with domesticated rice (Spearman's $\rho=0.537$) than with the allopatric population ($\rho=XXX$).  Nucleotide diversity in the allopatric population, in contrast, shows little correlation with diversity in domesticated samples ($\rho=0.139$).
 
 %make this a caption on the figure
 \vskip1ex
@@ -145,15 +127,15 @@ Preliminary analysis using ANGSD-wrapper is suggestive of introgression (Figure 
 %R Core Team (2014). R: A language and environment for statistical computing. R Foundation for Statistical Computing, 	Vienna, Austria. URL .
 %RStudio and Inc. (2014). shiny: Web Application Framework for R. R package version 0.10.2.1. http://CRAN.R-project.org/	package=shiny
 
-\bibitem{Crawford} Crawford, J., M. M. Riehle, W. M. Guelbeogo, A. Gneme, N. f. Sagnon, K. D. Vernick, R. Nielsen and B. P. Lazzaro (2014). Reticulate speciation and adaptive introgression in the Anopheles gambiae species complex. bioRxiv.
-\bibitem{Fumagalli} Fumagalli, M., F. G. Vieira, T. Linderoth and R. Nielsen (2014). ngsTools: methods for population genetics analyses from next-generation sequencing data. Bioinformatics 30(10): 1486-1487.
-\bibitem{Korneliussen} Korneliussen et al. (2014). ANGSD: Analysis of Next Generation Sequencing Data. BMC Bioinformatics. 15:356
-\bibitem{Lohmueller} Lohmueller, et al. (2013). Whole-Exome Sequencing of 2,000 Danish Individuals and the Role of Rare Coding Variants in Type 2 Diabetes. American Journal of Human Genetics, 93(6), 1072–1086.
+\bibitem{Crawford} Crawford, J., M. M. Riehle, W. M. Guelbeogo, A. Gneme, N. f. Sagnon, K. D. Vernick, R. Nielsen and B. P. Lazzaro (2014).  bioRxiv.
+\bibitem{Fumagalli} Fumagalli, M., F. G. Vieira, T. Linderoth and R. Nielsen (2014). Bioinformatics 30(10): 1486-1487.
+\bibitem{Korneliussen} Korneliussen et al. (2014). BMC Bioinformatics. 15:356
+\bibitem{Lohmueller} Lohmueller, et al. (2013). American Journal of Human Genetics, 93(6), 1072–1086.
 \bibitem{R} R Core Team (2014). R Foundation for Statistical Computing, Vienna, Austria \url{http://www.R-project.org/}
-\bibitem{Rhymer} Rhymer JM and Simberloff D (1996) Extinction by Hybridization and Introgression. Annu Rev Ecol Syst 27:83-109.
-\bibitem{Shiny} Rstudio, Inc. (2013). Easy web applications in R. \url{http://www.rstudio.com/shiny/}
-\bibitem{Vaughan} Vaughan DA, Morishima H, and Kadowaki K (2003) Diversity in the Oryza genus. Current Opinion in Plant Biology 6:139-146.
-\bibitem{Zhang} Zhang, Q.-J., et al. (2014). Rapid diversification of five Oryza AA genomes associated with rice adaptation. PNAS 111(46): E4954-E4962.
+\bibitem{Rhymer} Rhymer JM and Simberloff D (1996). Annu Rev Ecol Syst 27:83-109.
+\bibitem{Shiny} Rstudio, Inc. (2013). \url{http://www.rstudio.com/shiny/}
+\bibitem{Vaughan} Vaughan DA, Morishima H, and Kadowaki K (2003). Current Opinion in Plant Biology 6:139-146.
+\bibitem{Zhang} Zhang, Q.-J., et al. (2014). PNAS 111(46): E4954-E4962.
 
 \end{thebibliography}
 %--End of references-----------------------------------------------------------
