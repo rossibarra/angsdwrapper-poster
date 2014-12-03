@@ -51,12 +51,12 @@ Arun Durvasula\inst{1}, Tyler Kent\inst{1}, Siddharth Bhadra-Lobo\inst{1}, Jeffr
 The advent of highly multiplexed sequencing has opened a number of exciting avenues for evolutionary biologists. 
 One of the powerful approaches enabled by inexpensive sequencing is the ability to sequence a large number of individuals, each to relatively low sequencing depth. 
 However, this approach also presents statistical challenges in the analysis of low coverage data.  
-The software ANGSD \ref{Korneliussen} and related programs \ref{Fumagalli} were developed to deal with low coverage sequence data. %Fumagalli 2014 bioinformatics http://www.ncbi.nlm.nih.gov/pubmed/24458950
+The software ANGSD \cite{Korneliussen} and related programs \cite{Fumagalli} were developed to deal with low coverage sequence data. %Fumagalli 2014 bioinformatics http://www.ncbi.nlm.nih.gov/pubmed/24458950
 Rather than call genotypes at variable sites, ANGSD performs a number of population genetic analyses on genotype likelihoods, including estimation of the population mutation rate $\theta$, the site frequency spectrum, neutrality tests, inbreeding coefficients, and population structure.
-ANGSD has already been used in several studies to analyze genome sequence data \ref{Crawford}. %add cites
+ANGSD has already been used in several studies to analyze genome sequence data \cite{Crawford}. %add cites
 However, ANGSD requires considerable familiarity with command line tools and remains inaccessible to many biologists that are not from a computational background. 
 
-Here we present a software package that aids in the preparation of analyses for ANGSD and provides interactive graphing software implemented in R \ref{R} and Shiny \ref{blah}.  %add cites
+Here we present a software package that aids in the preparation of analyses for ANGSD and provides interactive graphing software implemented in R \cite{R} and Shiny \cite{blah}.  %add cites
 ANGSD-wrapper simplifies multistep analyses such as calculating Tajima’s D into a single step.
 Users supply all the needed information in a single configuration file \ref{configfile}, and after ANGSD has finished calculations, ANGSD-wrapper provides interactive graphing of the results \ref{shinygraph}.
 
@@ -109,8 +109,8 @@ These features make it easy and intuitive to analyze next generation sequencing 
 \section{Example Application}
 
 We sequenced 8 genomes of the wild rice \emph{Oryza glumaepatula}, 4 each from populations allopatric and sympatric to cultivated fields of the domesticated \emph{Oryza sativa} ssp. \emph{indica}, in order to investigate evidence of crop-wild introgression. 
-\emph{O. glumaepatula} is a potentially endangered species 1.8 MY diverged from domesticated rice \ref{Zhang} and native to Central and South America \ref{Vaughan}. 
-Both species share the AA genome \ref{Vaughan} and we have successfully crossed them experimentally, providing reason to believe the possibility of natural hybridization and thus the risk of wild population decline and extinction \ref{Rhymer}. 
+\emph{O. glumaepatula} is a potentially endangered species 1.8 MY diverged from domesticated rice \cite{Zhang} and native to Central and South America \cite{Vaughan}. 
+Both species share the AA genome \ref{Vaughan} and we have successfully crossed them experimentally, providing reason to believe the possibility of natural hybridization and thus the risk of wild population decline and extinction \cite{Rhymer}. 
 Preliminary analysis using ANGSD-wrapper is suggestive of introgression (Figure \ref{gluma}) as evidenced by the higher correlation of nucleotide diversity ($\pi$) between domesticated rice and the sympatric population (Spearman's $\rho=XXX$) than between domesticated rice and allopatric O. glumaepatula (XXX).
 
 %make this a caption on the figure
