@@ -1,1 +1,9 @@
 TSW*
+*.gz
+*.pdf
+*.log
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
