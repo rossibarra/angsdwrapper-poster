@@ -5,7 +5,7 @@
 %--A0 beamer slide-------------------------------------------------------------
 \documentclass[final]{beamer}
 \usepackage[orientation=landscape,size=a0,
-            scale=1.5         % font scale factor
+            scale=1.35         % font scale factor
            ]{beamerposter}
            
 \geometry{
@@ -14,15 +14,14 @@
 
 %
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \linespread{1.15}
 %
 %==The poster style============================================================
 \usetheme{sharelatex}
-\begin{document}
 %==Title, date and authors of the poster=======================================
 \title
-
 [BAPG, 6 December 2014, Davis, CA, USA] % Conference
 { % Poster title
 ANGSD-wrapper: scripts to streamline and visualize NGS population genetics analysis
@@ -38,8 +37,7 @@ Arun Durvasula\inst{1}, Tyler Kent\inst{1}, Siddharth Bhadra-Lobo\inst{1}, Jeffr
 \inst{2} Dept. of Plant Sciences, Center for Population Biology, and Genome Center, University of California Davis\\[0.3ex]
 }
 \date{\today}
-
-
+\begin{document}
 
 
 \begin{frame}[t]
@@ -51,46 +49,70 @@ Arun Durvasula\inst{1}, Tyler Kent\inst{1}, Siddharth Bhadra-Lobo\inst{1}, Jeffr
 
 \section{Introduction}
 
-The advent of highly multiplexed sequencing has brought led to the rapid generation of new genomic data. 
+The advent of highly multiplexed sequencing has opened a number of exciting avenues for evolutionary biologists. 
 One of the powerful approaches enabled by inexpensive sequencing is the ability to sequence a large number of individuals, each to relatively low sequencing depth. 
-However, this approach also presents statistical challenges in the analysis of low-coverage data.  The software package ANGSD \ref(Korneliussen).
-In order to aid in the analysis of next generation sequencing data, population genetics software such as ANGSD has been developed. This program allows the user to calculate population genetic statistics such as site frequency spectrums, neutrality tests, and 
-theta estimators from sequence data aligned to a reference. ANGSD uses likelihood based approaches to make full use of the data afforded by highly multiplexed sequencing. This has been used several studies to calculate summary statistics ( CITATIONS ). However, ANGSD requires much familiarity with command line tools and remains inaccessible to biologists that are not from a computational background. 
-	Here we present a software package that aids in the preparation of analysis and facilitates analysis with interactive graphing software implemented in R and Shiny. Before analysis, angsd-wrapper turns a multistep analysis such as calculating Tajima’s D into one step where the information needed is supplied using a configuration file. After ANGSD has finished the calculations, a browser based application can be used to interactively graph the results. 
+However, this approach also presents statistical challenges in the analysis of low coverage data.  
+The software ANGSD \ref{Korneliussen} and related programs \ref{Fumagalli} were developed to deal with low coverage sequence data. %Fumagalli 2014 bioinformatics http://www.ncbi.nlm.nih.gov/pubmed/24458950
+Rather than call genotypes at variable sites, ANGSD performs a number of population genetic analyses on genotype likelihoods, including estimation of the population mutation rate $\theta$, the site frequency spectrum, neutrality tests, inbreeding coefficients, and population structure.
+ANGSD has already been used in several studies to analyze genome sequence data \ref{blah}. %add cites
+However, ANGSD requires considerable familiarity with command line tools and remains inaccessible to many biologists that are not from a computational background. 
 
+Here we present a software package that aids in the preparation of analyses for ANGSD and provides interactive graphing software implemented in R \ref{R} and Shiny \ref{blah}.  %add cites
+ANGSD-wrapper simplifies multistep analyses such as calculating Tajima’s D into a single step.
+Users supply all the needed information in a single configuration file, and after ANGSD has finished calculations, ANGSD-wrapper provides interactive graphing of the results \ref{fig1}.
 
 \section{Implementation}
 
 ANGSD-wrapper is implemented using bash scripts that call ANGSD methods and handle saving intermediate files between the initial data preparation and the final data analysis. 
 Each overall method in ANGSD, such as calculating estimates of $\theta$, follows a specific order of program calls. 
-Thus, we have abstracted away the running of each step and provided a set of default values for parameters and instead require the user to supply the data using a configuration file (figure 1a). 
+Thus, we have abstracted away the running of each step and provided a set of default values for parameters and instead require the user to supply the data using a configuration file (Figure \ref{configfile}). 
 The user can override the default values of the parameters in the configuration file as well.
 	
-Additionally, angsd-wrapper contains a powerful graphing application based on R and Shiny (figure 1b). 
+Additionally, ANGSD-wrapper contains a powerful graphing application based on R and Shiny (Figure \ref{shinygraph}). 
 After the analysis is done by ANGSD, the user can load the resulting statistics into a web-based application hosted on the user’s computer. 
 This application allows the interactive plotting of values such as estimators of $\theta$ and Tajima’s D as well as the ability to load gene annotations from Ensembl. 
 These features make it easy and intuitive to analyze next generation sequencing data. 
 
-
 \vskip1ex
 \begin{figure}
-\centering
-\includegraphics[width=0.99\columnwidth]{conf.png}
-\caption{Figure 1a. Example configuration file.}
+  \centering
+	\includegraphics[width=0.75\columnwidth]{conf.png} 
+	\caption{Example configuration file}
+	\label{configfile}
 \end{figure}
+  
 \begin{figure}
-\centering
-\includegraphics[width=0.99\columnwidth]{screenshot.png}
-\caption{Figure 1b. angsd-wrapper interface}
+  \centering
+	\includegraphics[width=0.99\columnwidth]{screenshot.png}
+	\caption{Interactive plotting with Shiny}
+	\label{angsdwrapper}
 \end{figure}
 \vskip2ex
+
+
+%        \centering
+%        \begin{subfigure}
+%				\includegraphics[width=0.75\columnwidth]{conf.png}                
+%				%                \label{configfile}
+%        \end{subfigure}%
+%        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+%          %(or a blank line to force the subfigure onto a new line)
+%        \begin{subfigure}{0.3\textwidth}
+%				\includegraphics[width=0.99\columnwidth]{screenshot.png}
+%                \caption{Interactive plotting with Shiny}
+%                \label{shinygraph}
+%        \end{subfigure}
+%        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+%          %(or a blank line to force the subfigure onto a new line)
+%         
+%		
 
 \section{Example Application}
 
 We sequenced 8 genomes of the wild rice \emph{Oryza glumaepatula}, 4 each from populations allopatric and sympatric to cultivated fields of the domesticated \emph{Oryza sativa} ssp. \emph{indica}, in order to investigate evidence of crop-wild introgression. 
 \emph{O. glumaepatula} is a potentially endangered species 1.8 MY diverged from domesticated rice \cite{Zhang} native to Central and South America (Vaughan et al. 2003). 
 Both species share a AA genome (Vaughan et al. 2003) and we have successfully crossed them experimentally, providing reason to believe the possibility of natural hybridization and thus the risk of wild population decline and extinction (Rhymer & Simberloff 1996). 
-Preliminary analysis using angsd-wrapper is suggestive of introgression as evidenced by higher correlation of nculeotid diversity (pi) between domesticated rice and the sympatric population than between domesticated rice and allopatric O. glumaepatula (Fig. 2).
+Preliminary analysis using ANGSD-wrapper is suggestive of introgression as evidenced by higher correlation of nculeotid diversity (pi) between domesticated rice and the sympatric population than between domesticated rice and allopatric O. glumaepatula (Fig. 2).
 
 %make this a caption on the figure
 \vskip1ex
