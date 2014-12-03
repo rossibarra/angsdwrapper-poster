@@ -53,7 +53,7 @@ One of the powerful approaches enabled by inexpensive sequencing is the ability 
 However, this approach also presents statistical challenges in the analysis of low coverage data.  
 The software ANGSD \cite{Korneliussen} and related programs \cite{Fumagalli} were developed to deal with low coverage sequence data. %Fumagalli 2014 bioinformatics http://www.ncbi.nlm.nih.gov/pubmed/24458950
 Rather than call genotypes at variable sites, ANGSD performs a number of population genetic analyses on genotype likelihoods, including estimation of the population mutation rate $\theta$, the site frequency spectrum, neutrality tests, inbreeding coefficients, and population structure.
-ANGSD has already been used in several studies to analyze genome sequence data \cite{Crawford}. %add cites
+ANGSD has already been used in several studies to analyze genome sequence data \cite{Crawford} \cite{Lohmueller}. %add cites
 However, ANGSD requires considerable familiarity with command line tools and remains inaccessible to many biologists that are not from a computational background. 
 
 Here we present a software package that aids in the preparation of analyses for ANGSD and provides interactive graphing software implemented in R \cite{R} and Shiny \cite{Shiny}.  %add cites
@@ -150,6 +150,8 @@ Preliminary analysis using ANGSD-wrapper is suggestive of introgression (Figure 
 \bibitem{Fumagalli} Fumagalli, M., F. G. Vieira, T. Linderoth and R. Nielsen (2014). "ngsTools: methods for population genetics analyses from next-generation sequencing data." Bioinformatics 30(10): 1486-1487.
 
 \bibitem{Korneliussen} Korneliussen et al. (2014). BMC Bioinformatics. 15:356
+
+\bibitem{Lohmueller} Lohmueller, K. E., Sparsø, T., Li, Q., Andersson, E., Korneliussen, T., Albrechtsen, A., … Pedersen, O. (2013). Whole-Exome Sequencing of 2,000 Danish Individuals and the Role of Rare Coding Variants in Type 2 Diabetes. American Journal of Human Genetics, 93(6), 1072–1086. doi:10.1016/j.ajhg.2013.11.005
 
 \bibitem{R} R Core Team (2014). R Foundation for Statistical Computing, Vienna, Austria \url{http://www.R-project.org/}
 
