@@ -15,6 +15,16 @@
 %
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,
+  pdfauthor = {\name},
+  pdfkeywords = {population genetics, maize, plant evolution},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
 \linespread{1.15}
 %
 %==The poster style============================================================
@@ -58,7 +68,7 @@ However, ANGSD requires considerable familiarity with command line tools and rem
 
 Here we present a software package that aids in the preparation of analyses for ANGSD and provides interactive graphing software implemented in R \cite{R} and Shiny \cite{Shiny}.  %add cites
 ANGSD-wrapper simplifies multistep analyses such as calculating Tajima’s D into a single step.
-Users supply all the needed information in a single configuration file \ref{configfile}, and after ANGSD has finished calculations, ANGSD-wrapper provides interactive graphing of the results \ref{shinygraph}.
+Users supply all the needed information in a single configuration file (Figure \ref{configfile}), and after ANGSD has finished calculations, ANGSD-wrapper provides interactive graphing of the results (Figure \ref{shinygraph}). ANGSD-wrapper is available on github: \url{https://github.com/arundurvasula/angsd-wrapper}.
 
 \section{Implementation}
 
